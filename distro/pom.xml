@@ -38,6 +38,11 @@
     <fhir2Version>2.3.0</fhir2Version>
     <patientsummaryVersion>2.2.0</patientsummaryVersion>
 
+    <reportingrestVersion>1.15.0</reportingrestVersion>
+    <reportingVersion>1.27.0</reportingVersion>
+    <emrapiVersion>2.2.0</emrapiVersion>
+
+
     <!-- EIP Routes artifact versions -->
     <eipOpenMRSSenaiteVersion>2.2.0-SNAPSHOT</eipOpenMRSSenaiteVersion>
     <eipOdooOpenMRSVersion>2.2.0-SNAPSHOT</eipOdooOpenMRSVersion>
@@ -110,12 +115,35 @@
       <version>${oauth2loginVersion}</version>
       <type>jar</type>
     </dependency>
+
     <dependency>
       <groupId>org.openmrs.module</groupId>
       <artifactId>fhir2-omod</artifactId>
       <version>${fhir2Version}</version>
       <type>jar</type>
     </dependency>
+
+   
+     <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>reporting-omod</artifactId>
+      <version>${reportingVersion}</version>
+      <type>jar</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>reportingrest-omod</artifactId>
+      <version>${reportingrestVersion}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>emrapi-omod</artifactId>
+      <version>${emrapiVersion}</version>
+      <type>jar</type>
+    </dependency>
+
 
     <!-- EIP services -->
     <dependency>
@@ -435,7 +463,7 @@
                 <resource>
                   <directory>${project.build.directory}/distro-emr-configuration/openmrs_config</directory>
                   <excludes>
-                    <exclude>**/globalproperties-core_demo*</exclude>
+                    <exclude>**/globalproperties-core_democore_demo*</exclude>
                   </excludes>
                 </resource>
               </resources>
@@ -503,7 +531,37 @@
             </configuration>
           </execution>
 
-          <execution>
+
+          
+           <execution>
+            <id>Rename spa-assemble-config.json to reference-application-spa-assemble-config.json</id>
+            <phase>generate-resources</phase>
+            <configuration>
+              <target>
+                <copy file="configs/openmrs/frontend_assembly/reference-application-spa-assemble-config.json" 
+                                  tofile="${project.build.directory}/openmrs_frontend/reference-application-spa-assemble-config.json"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
+           <execution>
+                    <id>copy spa-assemble-config.json</id>
+                    <phase>process-resources</phase>
+                    <configuration>
+                    <target>
+                            <copy file="configs/openmrs/frontend_assembly/spa-assemble-config.json" 
+                                  tofile="${project.build.directory}/openmrs_frontend/spa-assemble-config.json"/>
+                     </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+          </execution>
+
+          <!-- <execution>
             <id>Rename spa-assemble-config.json to reference-application-spa-assemble-config.json</id>
             <phase>generate-resources</phase>
             <configuration>
@@ -524,7 +582,7 @@
             <goals>
               <goal>run</goal>
             </goals>
-          </execution>
+          </execution> -->
 
           <execution>
             <id>Copy filtered OpenMRS configuration</id>

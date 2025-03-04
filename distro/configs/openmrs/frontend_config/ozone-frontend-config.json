@@ -18,5 +18,22 @@
         "redirect": "${SUPERSET_PUBLIC_URL}"
       }
     ]
+    ,
+      "logo": {
+        "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
+        "alt": "ozone-logo"
+      }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
+      "alt": "ozone-logo"
+    }
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "logo": {
+      "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
+      "alt": "ozone-logo"
+    }
   }
 }
