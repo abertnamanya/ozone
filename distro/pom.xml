@@ -35,6 +35,7 @@
     <commonreportsVersion>1.5.0-SNAPSHOT</commonreportsVersion>
     <oauth2loginVersion>1.6.0-SNAPSHOT</oauth2loginVersion>
     <fhirproxyVersion>1.1.0-SNAPSHOT</fhirproxyVersion>
+    <fhir2Version>2.3.0</fhir2Version>
     <patientsummaryVersion>2.2.0</patientsummaryVersion>
 
     <reportingrestVersion>1.15.0</reportingrestVersion>
@@ -114,6 +115,14 @@
       <version>${oauth2loginVersion}</version>
       <type>jar</type>
     </dependency>
+
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>fhir2-omod</artifactId>
+      <version>${fhir2Version}</version>
+      <type>jar</type>
+    </dependency>
+
    
      <dependency>
       <groupId>org.openmrs.module</groupId>
@@ -602,6 +611,7 @@
                   <fileset
                     dir="${project.build.directory}/distro-emr-configuration/sdk-distro/web/modules">
                     <exclude name="authentication-*.omod"/>
+                    <exclude name="fhir2-2.2.0.omod"/>
                   </fileset>
                 </copy>
               </target>
