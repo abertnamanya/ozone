@@ -17,23 +17,89 @@
         "title": "Reporting & Analytics",
         "redirect": "${SUPERSET_PUBLIC_URL}"
       }
-    ]
-    ,
-      "logo": {
-        "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
-        "alt": "ozone-logo"
-      }
+    ],
+    "logo": {
+      "src": "",
+      "alt": "zim-logo"
+    }
   },
   "@openmrs/esm-login-app": {
     "logo": {
-      "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
-      "alt": "ozone-logo"
+      "src": "",
+      "alt": "zim-logo"
     }
   },
   "@openmrs/esm-patient-chart-app": {
     "logo": {
-      "src": "https://i.postimg.cc/KzVMhM4W/zim-logo.png",
-      "alt": "ozone-logo"
+      "src": "",
+      "alt": "zim-logo"
     }
+  },
+  "@openmrs/esm-patient-registration-app": {
+    "sections": [
+      "demographics",
+      "contact",
+      "nextOfKin"
+    ],
+    "sectionDefinitions": [
+      {
+        "id": "nextOfKin",
+        "name": "Next of Kin Details",
+        "fields": [
+          "nextOfKinName",
+          "nextOfkinPhone",
+          "nextOfKinAddress"
+        ]
+      }
+    ],
+    "fieldDefinitions": [
+      {
+        "id": "nextOfKinName",
+        "type": "person attribute",
+        "uuid": "34e4edba-4c9e-4031-a03e-0e1da733985f",
+        "label": "Name"
+      },
+      {
+        "id": "nextOfkinPhone",
+        "type": "person attribute",
+        "uuid": "17ba1c87-dc85-4173-9372-83edb59e511f",
+        "label": "Phone Number"
+      },
+      {
+        "id": "nextOfKinAddress",
+        "type": "person attribute",
+        "uuid": "ec59fed5-0bea-4fba-8b6f-e7ee5ef48aec",
+        "label": "Address"
+      }
+    ],
+    "fieldConfigurations": {
+      "name": {
+        "displayCapturePhoto": false,
+        "allowUnidentifiedPatients": false
+      },
+      "dateOfBirth": {
+        "useEstimatedDateOfBirth": {
+          "enabled": true,
+          "dayOfMonth": 15,
+          "month": 5
+        }
+      },
+      "gender": [
+        {
+          "id": "male",
+          "value": "Male",
+          "label": "Male"
+        },
+        {
+          "id": "female",
+          "value": "Female",
+          "label": "Female"
+        }
+      ]
+    },
+    "defaultPatientIdentifierTypes": [
+      "d45533e5-8509-48a4-bb7e-0c58fffaea30",
+      "fcf5bde1-e6ce-4070-922c-ffc7712c7493"
+    ]
   }
 }
