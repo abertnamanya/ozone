@@ -5,3 +5,7 @@ Uuid,Void/Retire,Name,Description,Format,Foreign,Searchable
 17ba1c87-dc85-4173-9372-83edb59e511f,0,next of kin phone,,java.lang.String,,,
 ec59fed5-0bea-4fba-8b6f-e7ee5ef48aec,0,next of kin address,,java.lang.String,,,
 dd4836c3-c355-4dc7-b966-68875b8e8e06,0,Medical Aid Number,,java.lang.String,,,
+98c3ece2-5473-478c-b620-6dd275393dc5,0,address,,java.lang.String,,,
+7982b8db-bfa3-48ab-b1e4-6752aa6c6360,0,City/Village,,java.lang.String,,,
+830b93e0-d85a-4452-bbfb-a4644efc759b,0,state/Province,,org.openmrs.Concept,,,
+2fed127a-50b6-4cfd-9801-5f60956eef51,0,Postal Code,,java.lang.String,,,

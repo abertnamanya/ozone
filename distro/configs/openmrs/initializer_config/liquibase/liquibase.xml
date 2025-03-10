@@ -40,18 +40,4 @@
         ]]>
         </sql>
     </changeSet>
-
-     <changeSet id="delete-Insurance-Policy-Number_20250306" author="abert" dbms="mysql,mariadb">
-        <preConditions onFail="MARK_RAN" onError="WARN">
-            <and>
-                <sqlCheck expectedResult="1">
-                     select count(uuid) from visit_attribute_type v WHERE v.name = "Insurance Policy Number" and v.retired = 0;
-                </sqlCheck>
-            </and>
-        </preConditions>
-        <sql><![CDATA[
-            UPDATE visit_attribute_type SET retired = 1 WHERE name = "Insurance Policy Number";
-        ]]>
-        </sql>
-    </changeSet>
 </databaseChangeLog>
